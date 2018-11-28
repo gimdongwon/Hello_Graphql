@@ -7,13 +7,13 @@ let movies = [
 export const getMovies = () => movies;
 
 export const getById = id => {
-  const filterMovies = Movies.filter(movie => movie.id === String(id));
+  const filterMovies = Movies.filter(movie => movie.id === id);
   return filterMovies[0];
 };
 
-export const deleteMovies = id => {
-  const cleanedMovies = movies.filter(movie => movie.id !== String(id));
-  if (movies.length > cleanedMovies.legnth) {
+export const deleteMovie = id => {
+  const cleanedMovies = movies.filter(movie => movie.id !== id);
+  if (movies.length > cleanedMovies.length) {
     movies = cleanedMovies;
     return true;
   } else {
